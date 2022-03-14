@@ -1,0 +1,31 @@
+<%- include('../layouts/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col mt-5">
+            <h1 class="text-center">RIWAYAT PERMAINAN</h1><br>
+            <table class="table">
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col">ID</th>
+                    <th scope="col">Win</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Date/Time</th>
+                  </tr>
+                </thead>                
+                <tbody>
+                <% history.forEach(i => { %>
+                  <tr class="text-center">
+                    <td><%= i.id %></td>
+                    <td><%= i.win %></td>
+                    <td><%= i.score %></td>
+                    <td><%= i.createdAt %></td>
+                  </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/footer') %> 

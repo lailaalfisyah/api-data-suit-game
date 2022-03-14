@@ -1,0 +1,39 @@
+<%- include('../layouts/header') %>
+
+<div class="container">
+    <div class="row">
+      <div class="col mt-2">
+            <h5 class="">Halo, admin <%= admin.fullName %></h5>
+            <h1 class="text-center mt-5">DATA-DATA USER GAME</h1><br>
+            <a href="/create" class="btn btn-primary">Tambah Data</a>
+            <table class="table">
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col">ID</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Email</th>
+                    <th scope="col" colspan="3"></th>
+                  </tr>
+                </thead>                
+                <tbody>
+                <% usergames.forEach(i => { %>
+                  <tr class="text-center">
+                    <td><%= i.id %></td>
+                    <td><%= i.username %></td>
+                    <td><%= i.fullName %></td>
+                    <td><%= i.gender %></td>
+                    <td><%= i.email %></td>
+                    <td><a href="/history/<%= i.id %>"><i class="fas fa-history"></i></a></td>
+                    <td><a href="/update/<%= i.id %>"><i class="fas fa-edit"></i></a></td>
+                    <td><a href="/delete/<%= i.id %>"><i class="fas fa-trash-alt"></i></a></td>
+                  </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/footer') %> 
